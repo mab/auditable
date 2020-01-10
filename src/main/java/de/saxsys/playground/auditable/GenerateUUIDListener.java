@@ -10,7 +10,7 @@ public class GenerateUUIDListener extends AbstractMongoEventListener<Identifiabl
     public void onBeforeConvert(BeforeConvertEvent<IdentifiableEntity> event) {
         IdentifiableEntity entity = event.getSource();
         if (entity.isNew()) {
-            entity.setId(UUID.randomUUID().toString());
+            entity.setId(UUID.randomUUID());
         }
     }
 }

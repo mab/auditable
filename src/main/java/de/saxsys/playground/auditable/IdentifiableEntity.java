@@ -4,21 +4,22 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.Persistable;
 
-public abstract class IdentifiableEntity implements Persistable<String> {
-    @Id
-    private String id;
+import java.util.UUID;
 
-    @Override
+public abstract class IdentifiableEntity implements Persistable<UUID> {
+    @Id
+    private UUID id;
+
     @JsonIgnore
     public boolean isNew() {
         return getId() == null;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 }
