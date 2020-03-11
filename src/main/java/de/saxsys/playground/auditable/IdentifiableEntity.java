@@ -22,4 +22,9 @@ public abstract class IdentifiableEntity implements Persistable<UUID> {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "IdentifiableEntity{" + "id=" + id + '}';
+    }
 }
